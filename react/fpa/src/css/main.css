@@ -1,0 +1,21 @@
+#main-body{
+  margin: 0 auto;
+  width: 50rem;
+}
+
+#main-table{
+  margin: 0 auto;
+  width: 40rem;
+  text-align: center;
+}
+
+#main-table th{
+  background-color: rgb(255, 195, 83);
+  color: white;
+}
+
+#main-table, #main-table th,#main-table td{
+  border: 2px solid orange;
+  border-collapse: collapse;
+  padding: 2px;
+}

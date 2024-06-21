@@ -1,0 +1,61 @@
+#modal{
+  margin: 0 auto;
+  width: 30rem;
+  padding: 2rem;
+  height: 32rem;
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  background-color: white;
+  border: 1px solid orange;
+  
+
+}
+#modal label {
+  margin: 2px;
+}
+
+#modal span{
+  display: inline-block;
+  color: orange;
+  margin-right: 0.01rem;
+}
+
+
+#modal input {
+  border-bottom: 1px solid orange;
+  width: 18rem;
+  outline: none;
+}
+
+#modal .option-font, #modal select {
+  color: orange;
+  font-size: medium;
+  width: 18rem;
+}
+
+.sc{
+  width: 8rem;
+  vertical-align: top;
+}
+textarea{
+  border: 1px solid orange;
+}
+
+#button-div{
+  width: 8rem;
+  margin: 0 auto;
+}
+
+#edit-complete-button, #cloese-button{
+  background-color: orange;
+  border : 1px solid gainsboro;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
+  height: 1.8rem;
+  font-size: medium;
+  margin-top: 1.3rem;
+}
+

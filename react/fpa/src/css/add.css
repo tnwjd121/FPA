@@ -1,0 +1,56 @@
+#add-body{
+  margin: 0 auto;
+  width: 36rem;
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+}
+#add-body label {
+  margin: 5px;
+}
+
+#add-body span{
+  display: inline-block;
+  color: orange;
+  margin-right: 2rem;
+}
+
+
+#add-body input {
+  border-bottom: 1px solid orange;
+  width: 20rem;
+  outline: none;
+}
+
+.option-font, #add-body select {
+  color: orange;
+  font-size: large;
+  width: 20rem;
+}
+
+.sc{
+  width: 8rem;
+  vertical-align: top;
+}
+textarea{
+  border: 1px solid orange;
+}
+
+#add-button{
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 19rem;
+  height: 2.5rem;
+  background-color:  orange;
+  color: white;
+  border-radius: 10px;
+  font-size: medium;
+  font-size: large;
+}
+
+#add-button:active{
+  background-color: rgb(228, 228, 228);
+}
+
+
+

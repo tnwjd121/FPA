@@ -1,0 +1,21 @@
+footer{
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(117, 117, 117);
+  width: 100%;
+  color: rgb(212, 210, 210);
+}
+li{
+  float: left;
+  list-style-type: none;
+  padding: 10px 10px;
+  font-size: 0.9rem;
+}
+p{
+  clear: both;
+  font-size: 0.8rem;
+  margin-left: 60px;
+}
+#footer-text{
+  margin-bottom: 10px;
+}
