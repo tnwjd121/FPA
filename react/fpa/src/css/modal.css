@@ -33,11 +33,6 @@
   font-size: medium;
   width: 18rem;
 }
-
-.sc{
-  width: 8rem;
-  vertical-align: top;
-}
 textarea{
   border: 1px solid orange;
 }
@@ -57,5 +52,16 @@ textarea{
   height: 1.8rem;
   font-size: medium;
   margin-top: 1.3rem;
+}
+
+#modal {
+  position: fixed;
+  left: 10rem;
+  right: 10rem;
+  top: 10rem;
+}
+
+#modal textarea{
+  margin-top: 5px;
 }
 

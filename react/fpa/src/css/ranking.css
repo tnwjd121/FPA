@@ -1,0 +1,11 @@
+#ranking-body{
+  width: 40rem;
+  margin: 0 auto;
+}
+
+#ranking-select{
+  float: right;
+  margin: 10px 0;
+  color: orange;
+  font-size: large;
+}

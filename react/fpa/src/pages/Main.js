@@ -4,12 +4,15 @@ import axios from 'axios';
 import { GrCaretPrevious,GrCaretNext } from "react-icons/gr";
 import '../css/main.css'
 import { RiDeleteBin5Line } from "react-icons/ri";
+import Modal from './Modal.js';
+import { useNavigate } from 'react-router-dom';
 
 const PAGE_SIZE = 15;
 
 export default function Main() {
   const [fpa, setFpa] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const navigate = useNavigate();
 
   // 서버 연결
   useEffect(()=>{
@@ -46,6 +49,13 @@ export default function Main() {
     setCurrentPage(prev => Math.min(prev - 1, 1))
   }
 
+  //ID 추출하는 함수
+  const getId = (data) => {
+    const href = data._links.self.href;
+    const id = href.substring(href.lastIndexOf('/') + 1)
+    navigate(`/Detail/${id}`);
+  }
+
   return (
     <div id='body'>
       <div id='main-body'>
@@ -66,13 +76,13 @@ export default function Main() {
           <tbody>
             {currentFpas.map(fpa =>(
               <tr key={fpa.id}>
-                <td>{fpa.bankName}</td>
-                <td>{fpa.category}</td>
-                <td>{fpa.productName}</td>
-                <td>{fpa.baseRate}</td>
-                <td>{fpa.interestRate}</td>
-                <td>{fpa.period}</td>
-                <td></td>
+                <td onClick={()=>getId(fpa)}>{fpa.bankName} </td>
+                <td onClick={()=>getId(fpa)}>{fpa.category}</td>
+                <td onClick={()=>getId(fpa)}>{fpa.productName}</td>
+                <td onClick={()=>getId(fpa)}>{fpa.baseRate}</td>
+                <td onClick={()=>getId(fpa)}>{fpa.interestRate}</td>
+                <td onClick={()=>getId(fpa)}>{fpa.period}</td>
+                <td><Modal fpa={fpa} fetchfpas={fetchfpas}/></td>
                 <td><RiDeleteBin5Line onClick={()=>deleteSubmit(fpa._links.self.href)}/></td>
               </tr>
             ))}

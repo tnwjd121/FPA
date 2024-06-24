@@ -1,0 +1,10 @@
+#calc-body{
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  margin: 0 auto;
+}
+
+.sc{
+  display: inline-block;
+}

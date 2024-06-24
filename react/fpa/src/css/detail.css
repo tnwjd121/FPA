@@ -1,0 +1,14 @@
+#detail-body{
+  margin: 0 auto;
+  width: 40rem;
+}
+
+#detail-body strong{
+font-size: x-large;
+color: orange;
+}
+
+#detail-body p {
+  font-size: x-large;
+  margin: 0.5rem 10px;
+}

@@ -1,0 +1,29 @@
+#search-body{
+  border-radius: 20px;
+  border: 5px solid orange;
+  padding: 6px;
+  width: 40rem;
+  margin: 20px auto;
+}
+
+#search-body input{
+  outline: none;
+  width: 33rem;
+  font-size: large;
+  color: orange;
+}
+
+#search-button{
+  background-color: white;
+  font-size: large;
+  color: orange;
+}
+
+#search-body select {
+  color: orange;
+  font-size: large;
+}
+
+#search-body option {
+  color: orange;
+}

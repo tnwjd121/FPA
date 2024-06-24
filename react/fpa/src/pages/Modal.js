@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import '../css/modal.css'
+import { RiEdit2Line } from "react-icons/ri";
+import axios from 'axios';
 
-export default function Modal() {
+export default function Modal({fpa, fetchfpas}) {
+  const [open, setOpen] = useState(false)
   const[formData, setFormData] = useState({
     bankName : "",
     productName : "",
@@ -21,10 +24,46 @@ export default function Modal() {
       [id]:value
     })
   }
+
+  const handleOpen = (e) => {
+    console.log(fpa)
+    setFormData({
+      bankName : fpa.bankName,
+      productName : fpa.productName,
+      category : fpa.category,
+      baseRate : fpa.baseRate,
+      interestRate : fpa.interestRate,
+      period : fpa.period,
+      minPrice : fpa.minPrice,
+      maxPrice : fpa.maxPrice,
+      information : fpa.information
+    })
+    setOpen(true)
+  }
+
+  const handleClose = (e) =>{
+    setOpen(false)
+  }
+  
+  // const handleSave = (e) => {
+  //   setOpen(false)
+  // }
+
+const saveSubmit = async (url) =>{
+  try {
+    const response = await axios.put(`${url}`,formData)
+    fetchfpas();
+    setOpen(false)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+  
   return (
     <>
-      <button>수정</button>
-      <div id='modal'>
+      <RiEdit2Line onClick={()=>handleOpen()}/>
+      <div id='modal' style={{display: open ? 'block' : "none"}}>
       <h2 id='title'>상품 수정</h2>
           <label>
             <span className='sc'>은행명</span>
@@ -69,8 +108,8 @@ export default function Modal() {
             <textarea id='information' onChange={handleChange} cols={40} rows={7} value={formData.information}></textarea>
           </label>
           <div id='button-div'>
-            <button id='edit-complete-button'>수정완료</button>
-            <button id='cloese-button'>닫기</button>
+            <button id='edit-complete-button' onClick={()=>saveSubmit(fpa._links.self.href)}>수정완료</button>
+            <button id='cloese-button' onClick={()=>handleClose()}>닫기</button>
           </div>
       </div>
     </>
