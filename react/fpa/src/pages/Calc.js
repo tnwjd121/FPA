@@ -4,7 +4,7 @@ import { GrPowerReset } from "react-icons/gr";
 
 export default function Calc() {
   /* 
-  단리만 하기
+  단리
   예금 계산법(월)
   단리 이자금액 - 원금 x 이자율 x 기간(?/12개월)
   
@@ -13,13 +13,12 @@ export default function Calc() {
 
   적금 계산법(월)
   단리 - 매월 납부금액 * 이자율 * 기간(?/12) => 월별로 다 더해야함 누적 쌓이는거
-  복리 - 매월 납부금액(누적되서 올라감)* 이자율 * 기간(?/12)
 
   구분 - 예금, 적금
   납입액 - 적금 월납입액으로 기재
   예금기간 - 개월
   연 이자율(단리) - %
-  이자과세 - 일반과세 비과세 초이스
+  이자과세 - 일반과세 비과세
   */
   const [inputData, setInputData] = useState({
     category : "",
