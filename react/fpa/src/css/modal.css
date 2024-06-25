@@ -1,6 +1,6 @@
 #modal{
   margin: 0 auto;
-  width: 30rem;
+  width: 28.5rem;
   padding: 2rem;
   height: 32rem;
   display: flex;
@@ -8,24 +8,18 @@
   font-size: large;
   background-color: white;
   border: 1px solid orange;
-  
+  text-align: left;
 
 }
-#modal label {
-  margin: 2px;
-}
-
 #modal span{
   display: inline-block;
   color: orange;
-  margin-right: 0.01rem;
 }
-
-
 #modal input {
   border-bottom: 1px solid orange;
   width: 18rem;
   outline: none;
+  color: rgb(107, 107, 107)
 }
 
 #modal .option-font, #modal select {
@@ -65,3 +59,17 @@ textarea{
   margin-top: 5px;
 }
 
+#edit-button:active{
+  color: rgb(129, 129, 129);
+}
+
+#edit-button:hover{
+  color: rgb(228, 228, 228);
+}
+#edit-complete-button:active, #cloese-button:active{
+  background-color: rgb(129, 129, 129);
+}
+
+#edit-complete-button:hover, #cloese-button:hover{
+  background-color: rgb(228, 228, 228);
+}

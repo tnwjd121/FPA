@@ -56,7 +56,7 @@ export default function Add() {
         information : ""
       })
     } catch (error) {
-      console.error('프로그랭 등록 에러 발생: ', error)
+      console.error('예적금 등록 에러 발생: ', error)
     }
   }
 

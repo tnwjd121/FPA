@@ -62,7 +62,7 @@ const saveSubmit = async (url) =>{
   
   return (
     <>
-      <RiEdit2Line onClick={()=>handleOpen()}/>
+      <RiEdit2Line onClick={()=>handleOpen()} id="edit-button"/>
       <div id='modal' style={{display: open ? 'block' : "none"}}>
       <h2 id='title'>상품 수정</h2>
           <label>

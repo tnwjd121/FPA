@@ -65,9 +65,9 @@ export default function Search() {
                   <td>{fpa.bankName}</td>
                   <td>{fpa.category}</td>
                   <td>{fpa.productName}</td>
-                  <td>{fpa.baseRate}</td>
-                  <td>{fpa.interestRate}</td>
-                  <td>{fpa.period}</td>
+                  <td>{fpa.baseRate}%</td>
+                  <td>{fpa.interestRate}%</td>
+                  <td>{fpa.period}개월</td>
                 </tr>
               ))}
             </tbody>

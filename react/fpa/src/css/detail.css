@@ -4,11 +4,11 @@
 }
 
 #detail-body strong{
-font-size: x-large;
+font-size: large;
 color: orange;
 }
 
 #detail-body p {
-  font-size: x-large;
+  font-size: large;
   margin: 0.5rem 10px;
 }

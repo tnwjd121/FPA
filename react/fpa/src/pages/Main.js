@@ -79,11 +79,11 @@ export default function Main() {
                 <td onClick={()=>getId(fpa)}>{fpa.bankName} </td>
                 <td onClick={()=>getId(fpa)}>{fpa.category}</td>
                 <td onClick={()=>getId(fpa)}>{fpa.productName}</td>
-                <td onClick={()=>getId(fpa)}>{fpa.baseRate}</td>
-                <td onClick={()=>getId(fpa)}>{fpa.interestRate}</td>
-                <td onClick={()=>getId(fpa)}>{fpa.period}</td>
+                <td onClick={()=>getId(fpa)}>{fpa.baseRate}%</td>
+                <td onClick={()=>getId(fpa)}>{fpa.interestRate}%</td>
+                <td onClick={()=>getId(fpa)}>{fpa.period}개월</td>
                 <td><Modal fpa={fpa} fetchfpas={fetchfpas}/></td>
-                <td><RiDeleteBin5Line onClick={()=>deleteSubmit(fpa._links.self.href)}/></td>
+                <td><RiDeleteBin5Line id='delete-button' onClick={()=>deleteSubmit(fpa._links.self.href)}/></td>
               </tr>
             ))}
           </tbody>

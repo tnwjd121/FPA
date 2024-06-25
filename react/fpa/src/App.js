@@ -10,6 +10,8 @@ import Modal from './pages/Modal';
 import Search from './pages/Search';
 import Ranking from './pages/Ranking';
 import Calc from './pages/Calc';
+import Login from './pages/Login';
+import Join from './pages/Join';
 
 function App() {
   
@@ -35,6 +37,8 @@ function App() {
           <Route path='/Search' element={<Search />} /> 
           <Route path='/Ranking' element={<Ranking/>} /> 
           <Route path='/Calc' element={<Calc/>} /> 
+          <Route path='/Login' element={<Login/>} /> 
+          <Route path='/Join' element={<Join/>} /> 
         </Routes>
         <Footer/>
       </>

@@ -1,0 +1,60 @@
+#login{
+  margin:5rem auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: 10.5rem;
+  padding: 30px;
+  border: 3px solid orange;
+}
+
+#login-title{
+  color: orange;
+  text-align: center;
+  font-size: x-large;
+  margin-bottom: 1rem;
+}
+
+#login-span{
+  display: inline-block;
+  width: 6rem;
+  color: orange;
+}
+
+#login label {
+  margin-bottom: 3px;
+}
+
+#login input {
+  outline: none;
+  border-bottom: 2px solid orange;
+  width: 13rem;
+  color: rgb(107, 107, 107)
+}
+
+#login select {
+  color: orange;
+  width: 13rem;
+}
+
+#login-button{
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 6rem;
+  height: 2rem;
+  background-color:  orange;
+  color: white;
+  border-radius: 10px;
+  font-size: medium;
+  font-size: large;
+  padding: 3px;
+}
+
+#login-button:active{
+  background-color: rgb(129, 129, 129);
+}
+
+#login-button:hover{
+  background-color: rgb(228, 228, 228);
+}

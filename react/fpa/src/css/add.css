@@ -21,6 +21,7 @@
   width: 20rem;
   outline: none;
   font-size: large;
+  color: rgb(107, 107, 107)
 }
 
 .option-font, #add-body select {
@@ -35,6 +36,7 @@
 }
 textarea{
   border: 1px solid orange;
+  color: rgb(107, 107, 107)
   
 }
 
@@ -51,8 +53,9 @@ textarea{
 }
 
 #add-button:active{
-  background-color: rgb(228, 228, 228);
+  background-color: rgb(129, 129, 129);
 }
 
-
-
+#add-button:hover{
+  background-color: rgb(228, 228, 228);
+}

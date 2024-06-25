@@ -19,3 +19,11 @@
   border-collapse: collapse;
   padding: 2px;
 }
+
+#delete-button:active{
+  color: rgb(129, 129, 129);
+}
+
+#delete-button:hover{
+  color: rgb(228, 228, 228);
+}
