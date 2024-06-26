@@ -69,8 +69,8 @@ export default function Main() {
               <th id='base-rate'>기본금리</th>
               <th id='interest-rate'>최대금리</th>
               <th id='period'>기간</th>
-              <th id='edit'>수정버튼</th>
-              <th id='delete'>삭제버튼</th>
+              <th id='edit'>수정</th>
+              <th id='delete'>삭제</th>
             </tr>
           </thead>
           <tbody>

@@ -28,7 +28,7 @@ export default function Join() {
     const inputs = document.querySelectorAll("input")
     let isFormValid = true;
     inputs.forEach(input => {
-      if(input.vlaue === ''){
+      if(input.value === ''){
         isFormValid = false;
       }
     })

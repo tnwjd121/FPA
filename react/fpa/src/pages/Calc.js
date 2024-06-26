@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/calc.css'
 import { GrPowerReset } from "react-icons/gr";
 
@@ -21,17 +21,12 @@ export default function Calc() {
   이자과세 - 일반과세 비과세
   */
   const [inputData, setInputData] = useState({
-    category : "",
+    category : "예금",
     depositAmount : "",
     period : "",
     rate : "",
-    tax : ""
+    tax : "일반과세"
   })
-
-  const [resultMoney, setResultMoney] = useState(0);
-  const [roundIA, setRoundIA] = useState(0);
-  const [principal, setPrincipal] = useState(0)
-
 
   const handleChange = (e) =>{
     const{id, value} = e.target
@@ -40,7 +35,7 @@ export default function Calc() {
       [id]:value
     })
   }
-
+  
   const calcSubmit = () =>{
     const inputs = document.querySelectorAll("input");
     let isFormValue = true;
@@ -53,18 +48,22 @@ export default function Calc() {
       alert("모든 정보 입력 부탁드립니다.")
       return
     }
-    // console.log(inputData)
+
+    let roundIA = 0;
+    let principal = 0;
+    let resultMoney = 0;
+
     if(inputData.category=='예금'){
       //예금 이자
       const interestAmount = inputData.depositAmount*parseFloat(inputData.rate/100)*(inputData.period/12)
       // 예금 이자 반올림
-      setRoundIA(Math.round(interestAmount))
-      setPrincipal(parseFloat(inputData.depositAmount))
+      roundIA = Math.round(interestAmount)
+      principal = parseFloat(inputData.depositAmount)
       if(inputData.tax=='일반과세'){
-        setRoundIA(Math.round(interestAmount*0.846)) 
-        setResultMoney(parseInt(inputData.depositAmount)+roundIA)
+        roundIA = Math.round(interestAmount*0.846)
+        resultMoney = principal + roundIA
       }else{
-        setResultMoney(parseInt(inputData.depositAmount) + roundIA);
+        resultMoney = principal + roundIA
       }
     }else{
       // 적금 이자
@@ -74,17 +73,23 @@ export default function Calc() {
         sInterestAmount += inputData.depositAmount*parseFloat(inputData.rate/100)*(i/12)
         money += parseInt(inputData.depositAmount)
       }
-      setPrincipal(money)
-      setRoundIA(Math.round(sInterestAmount))
+      principal = money
+      roundIA = Math.round(sInterestAmount)
       if(inputData.tax=='일반과세'){
-        setRoundIA(Math.round(sInterestAmount*0.846)) 
-        setResultMoney(money + roundIA);
+        roundIA = Math.round(sInterestAmount*0.846)
+        resultMoney = principal + roundIA
       }else{
-        setResultMoney(money + roundIA);
+        resultMoney = principal + roundIA
       }
     }
+    const resultText = document.getElementById("result-text")
+    const principalText = document.getElementById("calc-pr")
+    const iaText = document.getElementById("calc-ia")
+    resultText.textContent = `결과: ${resultMoney.toLocaleString()}원 수령하실 수 있습니다.`
+    principalText.textContent = `원금: ${principal.toLocaleString()}원`
+    iaText.textContent = `이자: ${roundIA.toLocaleString()}원`
   }
-
+  
   const resetSubmit = () =>{
     setInputData({
       category : "",
@@ -93,9 +98,14 @@ export default function Calc() {
       rate : "",
       tax : ""
     })
-
-    setResultMoney(0);
+    const resultText = document.getElementById("result-text")
+    const principalText = document.getElementById("calc-pr")
+    const iaText = document.getElementById("calc-ia")
+    resultText.textContent = ''
+    principalText.textContent = ''
+    iaText.textContent = ''
   }
+
 
   return (
     <div id='body'>
@@ -136,13 +146,11 @@ export default function Calc() {
           <button id='calc-button' onClick={calcSubmit}>계산하기</button>
         </div>
         <div>
-          {resultMoney>0 && (
             <>
-              <h2 id='result-text'>결과:    {resultMoney.toLocaleString()}원 수령하실 수 있습니다.</h2>
-              <p id='calc-p'>원금 : {principal.toLocaleString()}</p>
-              <p id='calc-p'>이자 : {roundIA.toLocaleString()}</p>
+              <h2 id='result-text'></h2>
+              <p id='calc-pr'></p>
+              <p id='calc-ia'></p>
             </>
-          )}
         </div>
       </div>
     </div>

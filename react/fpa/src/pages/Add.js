@@ -63,7 +63,7 @@ export default function Add() {
   return (
     <div id='body'>
       <div id="add-body">
-          <h1 id='title'>상품 등록</h1>
+          <h1 id='title'>예적금 등록</h1>
           <label>
             <span className='sc'>은행명</span>
             <input id='bankName' type='text' value={formData.bankName} onChange={handleChange}/>

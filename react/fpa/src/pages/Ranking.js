@@ -35,7 +35,7 @@ export default function Ranking() {
   return (
     <div id='body'>
       <div id='ranking-body'>
-        <h1 id='title'>상품 랭킹</h1>
+        <h1 id='title'>예적금 랭킹</h1>
         <select id='ranking-select' value={selectOption} onChange={(e)=> setSelectOption(e.target.value)}>
           <option value='예금'>예금</option>
           <option value='적금'>적금</option>
